@@ -163,7 +163,7 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.Todo.Done(childComplexity), true
 
-	case "Todo._id":
+	case "Todo.id":
 		if e.complexity.Todo.ID == nil {
 			break
 		}
@@ -275,7 +275,7 @@ type Query {
 # https://gqlgen.com/getting-started/
 
 type Todo {
-  _id: ID!
+  id: ID!
   text: String!
   done: Boolean!
   user: User!
@@ -740,7 +740,7 @@ func (ec *executionContext) _Query___schema(ctx context.Context, field graphql.C
 	return ec.marshalO__Schema2ᚖgithubᚗcomᚋ99designsᚋgqlgenᚋgraphqlᚋintrospectionᚐSchema(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) _Todo__id(ctx context.Context, field graphql.CollectedField, obj *model.Todo) (ret graphql.Marshaler) {
+func (ec *executionContext) _Todo_id(ctx context.Context, field graphql.CollectedField, obj *model.Todo) (ret graphql.Marshaler) {
 	defer func() {
 		if r := recover(); r != nil {
 			ec.Error(ctx, ec.Recover(ctx, r))
@@ -2225,8 +2225,8 @@ func (ec *executionContext) _Todo(ctx context.Context, sel ast.SelectionSet, obj
 		switch field.Name {
 		case "__typename":
 			out.Values[i] = graphql.MarshalString("Todo")
-		case "_id":
-			out.Values[i] = ec._Todo__id(ctx, field, obj)
+		case "id":
+			out.Values[i] = ec._Todo_id(ctx, field, obj)
 			if out.Values[i] == graphql.Null {
 				invalids++
 			}

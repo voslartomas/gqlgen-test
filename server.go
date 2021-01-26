@@ -7,10 +7,10 @@ import (
 
 	mongodb "github.com/voslartomas/gqlgen-test/db/mongo"
 
-	"github.com/voslartomas/gqlgen-test/graph"
-	"github.com/voslartomas/gqlgen-test/graph/generated"
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/voslartomas/gqlgen-test/graph"
+	"github.com/voslartomas/gqlgen-test/graph/generated"
 )
 
 const defaultPort = "8080"

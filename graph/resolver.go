@@ -1,6 +1,6 @@
 package graph
 
-//go:generate go run github.com/99designs/gqlgen
+//go:generate go run github.com/99designs/gqlgen && go run ./app/models/model_tags/model_tags.go
 
 // This file will not be regenerated automatically.
 //

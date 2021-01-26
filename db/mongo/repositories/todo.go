@@ -47,6 +47,8 @@ func GetAll() []*model.Todo {
 		panic(err)
 	}
 
+	fmt.Println(todos)
+
 	return todos
 }
 
