@@ -2,7 +2,7 @@ package mongo
 
 import (
 	"context"
-	"fmt"
+	"log"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -10,11 +10,9 @@ import (
 )
 
 var dbClient *mongo.Client
-var dbCtx context.Context
 
-func Connect() {
+func Connect() context.Context {
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	dbCtx = ctx
 
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://root:test@localhost:27017/?authSource=admin"))
 	dbClient = client
@@ -25,18 +23,16 @@ func Connect() {
 		panic("DB error")
 	}
 
-	fmt.Println("Connected to mongo db.")
+	log.Println("Connected to mongo db.")
+
+	return ctx
 }
 
-func Disconnect() {
-	dbClient.Disconnect(dbCtx)
-	fmt.Println("Disconnected from mongo db.")
+func Disconnect(ctx context.Context) {
+	dbClient.Disconnect(ctx)
+	log.Println("Disconnected from mongo db.")
 }
 
 func GetDatabase() *mongo.Database {
 	return dbClient.Database("gqlgentest")
-}
-
-func GetContext() context.Context {
-	return dbCtx
 }

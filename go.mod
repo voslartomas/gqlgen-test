@@ -7,8 +7,12 @@ require (
 	github.com/99designs/gqlgen v0.13.0
 	github.com/codegangsta/envy v0.0.0-20141216192214-4b78388c8ce4 // indirect
 	github.com/codegangsta/gin v0.0.0-20171026143024-cafe2ce98974 // indirect
+	github.com/go-redis/redis v6.15.9+incompatible
+	github.com/go-redis/redis/v8 v8.4.11 // indirect
 	github.com/mattn/go-shellwords v1.0.11 // indirect
+	github.com/uptrace/uptrace-go v0.7.3
 	github.com/vektah/gqlparser/v2 v2.1.0
 	go.mongodb.org/mongo-driver v1.4.5
+	go.opentelemetry.io/otel v0.16.0
 	gopkg.in/urfave/cli.v1 v1.20.0 // indirect
 )

@@ -91,6 +91,5 @@ func FindByID(todoID string) (*model.Todo, error) {
 	var todo *model.Todo
 	err := getTodoRepository().FindOne(context.TODO(), bson.M{"_id": id}).Decode(&todo)
 
-	fmt.Println(todo)
 	return todo, err
 }
